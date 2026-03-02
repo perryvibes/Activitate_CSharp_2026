@@ -27,4 +27,5 @@ namespace Seminar1
         public string Afiseaza() => $"Nume: {nume}\nGrupa: {grupa}\nNota Examen: {notaExamen:F2}\nNota Laborator: {notaLaborator:F2}\nMedie: {Medie:F2}";
 
     }
+    // TEST COMMIT-PUSH
 }
