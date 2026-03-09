@@ -36,7 +36,7 @@ namespace Seminar2
         public override string ToString()
         {
             return $"Numar: {NumarComanda} | Client: {NumeClient} " +
-                $"| Valoare: ...";
+                $"| Valoare:{GetValoareTotala()}";
         }
 
     }

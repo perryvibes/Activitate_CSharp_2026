@@ -32,10 +32,50 @@ namespace Seminar2
             d.ComandaSchimbatStare +=
                 (object sender, ComandaSchimbatStareEventArgs e) =>
                 {
-                    Console.WriteLine(".....");
+                    Console.WriteLine($"Comanda {e.Comanda.NumarComanda} din " + 
+                        $"{e.StareVeche} in {e.StareNoua}");
                 };
+            d.ComandaLivrata += OnComandaLivrata;
 
             d.AvanseazaComanda("CMD-001");
+            d.AvanseazaComanda("CMD-001");
+            d.AvanseazaComanda("CMD-001");
+        }
+        private static void OnComandaLivrata(object sender, ComandaLivrataEventArgs e)
+        {
+            Console.WriteLine($"Comanda {e.Comanda.NumarComanda} a fost livrata la data de {e.DataLivrare.ToString("dd.MM.yyyy")}");
+        }
+        private static NotificareClient BuildNotificator(string optiuni)
+        {
+            NotificareClient notificator = null;
+            //switch (optiuni)
+            //{
+            //    case optiuni.Contains("sms"):
+            //    {
+            //        notificator += NotificareService.NotificaPrinSMS;
+            //            break;
+            //    }
+            //    case optiuni.Contains("email"):
+            //    {
+            //        notificator += NotificareService.NotificaPrinEmail;
+            //            break;
+            //    }
+            //    case optiuni.Contains("log"):
+            //    {
+            //        notificator += NotificareService.NotificaPrinLog;
+            //            break;
+            //    }
+            //    default:
+            //        return notificator;
+            //        break;
+            //}
+            if (optiuni.Contains("sms"))
+                notificator += NotificareService.NotificaPrinSMS;
+            if (optiuni.Contains("email"))
+                notificator += NotificareService.NotificaPrinEmail;
+            if (optiuni.Contains("log"))
+                notificator += NotificareService.NotificaPrinLog;
+            return notificator;
         }
     }
 }

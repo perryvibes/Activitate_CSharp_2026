@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comanda.cs" />
+    <Compile Include="ComandaLivrataEventArgs.cs" />
     <Compile Include="ComandaSchimbatStareEventArgs.cs" />
     <Compile Include="Depozit.cs" />
     <Compile Include="NotificareClient.cs" />
